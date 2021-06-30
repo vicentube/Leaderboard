@@ -8,9 +8,12 @@ import SwiftUI
 
 @main
 struct LeaderboardApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  @StateObject private var model = Leaderboard()
+  
+  var body: some Scene {
+    WindowGroup {
+      PlayerListView()
+        .environmentObject(model)
     }
+  }
 }
